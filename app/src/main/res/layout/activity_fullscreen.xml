@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#0099cc"
+    tools:context=".FullscreenActivity"
+    android:gravity="center_horizontal">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <com.xanderfehsenfeld.flippycakes.GameView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true" android:textColor="#33b5e5"
+        android:textStyle="bold" android:textSize="50sp" android:gravity="center"
+        android:text="@string/dummy_content" />
+
+    <Button
+        android:visibility="gone"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:id="@+id/button"
+        android:layout_alignBottom="@id/fullscreen_content"
+        android:layout_gravity="left|bottom"
+        android:onClick="showSettingsPopup"/>
+
+    <TextView
+        android:gravity="left"
+        android:id="@+id/score_tv"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="SCORE : 0"
+        android:textColor="@color/red"
+        android:layout_gravity="center_horizontal|top" />
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressbar_flippiness"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/score_tv"
+        android:indeterminate="false"
+        android:background="@drawable/customprogressbar"/>
+
+
+
+
+
+</RelativeLayout>
